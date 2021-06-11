@@ -2,8 +2,10 @@ FROM golang:alpine
 
 WORKDIR /go/src/app
 
-COPY ./go-helloworld .
+ADD . .
 
-RUN go build -o helloworld
+RUN go build  -o helloworld
 
-CMD ["helloworld"]
+EXPOSE 6111
+
+CMD ["./helloworld"]
